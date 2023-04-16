@@ -23,3 +23,9 @@ for (let i = 0; i < btnsOpenModal.length; i++) {
 btnCloseModal.addEventListener('click', closeModal);
 overlay.addEventListener('click', closeModal);
 // We DO NOT call the function (closeModal())//openModal() - this will call it immedietely.
+
+document.addEventListener('keydown', (event) => {
+  if (event.key === 'Escape' && !modal.classList.contains('hidden')) {
+    closeModal();
+  }
+});
